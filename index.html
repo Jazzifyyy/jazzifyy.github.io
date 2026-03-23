@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: black;
+  color: white;
+}
+ /* Basic styling for visibility */
+.column {
+  padding: 0;
+}
+
+/* 1. Mobile First: Columns stack vertically by default */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.col-main { order: 1; }
+.col-left { order: 3; }
+.col-right { order: 2; }
+
+
+/* 2. Tablet/Desktop: Side-by-side layout */
+@media (min-width: 1000px) {
+  .container {
+    flex-direction: row;
+  }
+
+  /* Assigning specific widths */
+ .col-left { flex: 1; order: 1; }
+  .col-main { flex: 3; order: 2; }
+  .col-right { flex: 1; order: 3; }
+  /* Widget Specific Styling */
+.lastfm-track {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.lastfm-img {
+  width: 75%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.track-text p {
+  text-align: left;
+  margin: 0;
+  font-size: 0.9rem;
+}
+} 
+</style>
+<body>
+</head>
+<header class="site-header">
+  <div class="header-text">
+    <h1>Welcome to jazzifyy's website</h1>
+    <p>“It was a wonderful night, such a night as is only possible when we are young, dear reader.”</p>
+  </div>
+  
+</header>
+<hr> 
+<div class="container">
+  <div class="column col-left">
+    <h3>Socials</h3>
+    <a href="https://www.instagram.com/jazzifyy_" target ="_blank">
+    Instagram
+    </a>
+    <br>
+    <img src = "flower.gif" width = "250" height = "400">
+    <p>Now since you are here, how about you sign my
+    <a href="https://jazzifyy.atabook.org/" target = "_blank">guestbook</a>.
+    </p>
+    <img src = "guestbook.gif">
+  </div>
+  <div class="column col-main">
+    <img src = "rain.gif" width = "650">
+    <h2>Welcome to my corner of the internet</h2>
+    <p>I am some 20M guy who is interested in the intricacies that shape the natural world around us.</p> 
+    <p>If you think this website is ugly, chances are that you've grown too accustomed to the cages of the modern web. This is a space to think and to relax, a space where you are not in the constant stream of ads and manipulation. Break free, dear friend.</p>
+    <p> <i>"Is any of it real? ...We live in branded houses trademarked by corporations built on bipolar numbers jumping up and down on digital displays, hypnotizing us into the biggest slumber mankind has ever seen."</i>
+    </p>
+    
+<img style = "float: right" src = "pyramid.gif" width = "225">
+     <p style="text-align: center; font-family:Brush Script MT,cursive; font-size: 25px; width:600px">
+     We'll give you a key to open all of the gates <br>
+     We'll show you a sea of starlight to drown all your cares <br>
+     Mirrorhouses, the sweetest kisses and wines <br>
+     A Debussy dialogue between wind and the roaring sea <br>
+     We are the Edema Ruh <br>
+     We know the songs the sirens sang <br>
+     See us dream every tale true <br>
+     The verse we leave with you will take you home <br>
+    </p>
+
+    <p><b>Some facts about me:</b></p>
+     <ul>
+    <li>I constantly battle to keep the devils of self-doubt at bay. I lose most of the times. This website is my way of holding the line.</li>
+    <li>I hate politicians/corporations that take part in the broader movement of social engineering.</li>
+    <li>I believe knowledge should be free and should be shared. The pursuit and teaching of knowledge is the one of the most noble doings of a human life.</li>
+    <li>It saddens me that the arts of collaborative learning are lost now. Everything is done to be better than the other. </li>
+    </ul>
+
+  </div>
+  <div class="column col-right">
+    <h4>Currently listening to:</h4>
+    <div id="lastfm-widget">
+      <p>Loading track...</p>
+    </div>
+    <h4>Currently reading:</h4>
+    <ul>
+    <li>Circe - Madeline Miller</li>
+    <li>The Eye of the World - Robert Jordan</li>
+    <li>An Enquiry into the Human Understanding - David Hume</li>
+    </ul>
+  </div>
+</div>
+<script src="lastfm.js"></script>
+</body>
+</html>
