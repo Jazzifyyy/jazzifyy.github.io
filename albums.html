@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jazzifyy's website</title>
+<style>
+  /* Default for Mobile (Small Screens) */
+  html {
+    font-size: 14px; 
+  }
+
+  /* For Desktop (Screens wider than 1024px) */
+  @media (min-width: 1024px) {
+    html {
+      font-size: 15.2px; 
+    }
+  }
+
+  body {
+    background-color: black;      
+    color: white;
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  .site-header {
+    padding: 20px;
+  }
+
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2.5rem;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .album-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    border: 1px solid #222;   
+}
+
+  .album-card img:hover {
+    transform: scale(1.05);
+  }
+
+  .album-info h3 {
+    margin: 12px 0 4px 0;
+    font-size: 1.1rem;
+  }
+
+  .album-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 0;
+  }
+</style>
+</head> 
+<body>
+
+<header class="site-header">
+  <div class="header-text">
+    <h1>Welcome to <span style="color:#a232a8;">jazzifyy</span>'s website</h1>
+    <p><i>“It was a wonderful night, such a night as is only possible when we are young, dear reader.”</i></p>
+  </div>
+</header>
+
+<hr>
+<div class="album-grid">
+  
+  <article class="album-card">
+    <img src="albums/ecailles_de_lune.jpg" alt="Alcest">
+    <div class="album-info">
+      <h3>Écailles de lune</h3>
+      <p>Alcest</p>
+    </div>
+  </article>
+
+  <article class="album-card">
+    <img src="albums/dreams.webp" alt="Kyabaat">
+    <div class="album-info">
+      <h3>Dreams</h3>
+      <p>Kyabaat</p>
+    </div>
+  </article> 
+
+  <article class="album-card">
+    <img src="albums/relaxing_with_the_miles_davis.png" alt="Miles Davis">
+    <div class="album-info">
+      <h3>Relaxin' With The Miles Davis Quintet</h3>
+      <p>Miles Davis Quintet</p>
+    </div>
+  </article>
+
+  <article class="album-card">
+    <img src="albums/damnation.jpg" alt="Opeth">
+    <div class="album-info">
+      <h3>Damnation</h3>
+      <p>Opeth</p>
+    </div>
+  </article>
+
+  <article class="album-card">
+    <img src="albums/first_utterance.png" alt="Comus">
+    <div class="album-info">
+      <h3>First Utterance</h3>
+      <p>Comus</p>
+    </div>
+  </article>
+
+  <article class="album-card">
+    <img src="albums/infinite_reflections.jpg" alt="Uniri">
+    <div class="album-info">
+      <h3>Infinite Reflections</h3>
+      <p>Uniri</p>
+    </div>
+  </article>
+
+  <article class="album-card">
+    <img src="albums/cognitive.jpg" alt="Soen">
+    <div class="album-info">
+      <h3>Cognitive</h3>
+      <p>Soen</p>
+    </div>
+  </article>
+
+  <article class="album-card">
+    <img src="albums/III.jpg" alt="Espers">
+    <div class="album-info">
+      <h3>III</h3>
+      <p>Espers</p>
+    </div>
+  </article>
+
+  <article class="album-card">
+    <img src="albums/in_search_of_a_better_tomorrow.jpg" alt="EABS Meets Jaubi">
+    <div class="album-info">
+      <h3>In Search of a Better Tomorrow</h3>
+      <p>EABS Meets Jaubi</p>
+    </div>
+  </article>
+
+</div> 
+
+</body>
+</html>
