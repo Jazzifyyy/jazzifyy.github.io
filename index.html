@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>jazzifyy's website</title>
 <style>
+/* Default for Mobile (Small Screens) */
+html {
+  font-size: 20px; 
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 15.2px; /* Everything using 'rem' will now appear larger */
+  }
+}
 body {
   background-color: black;
   color: white;
+  font-size: 1rem;
 }
  /* Basic styling for visibility */
 .column {
-  padding: 0;
+  padding:0;
 }
 
 /* 1. Mobile First: Columns stack vertically by default */
@@ -24,9 +36,10 @@ body {
 
 
 /* 2. Tablet/Desktop: Side-by-side layout */
-@media (min-width: 1000px) {
+@media (min-width: 1300px) {
   .container {
     flex-direction: row;
+    gap: 0.5rem;
   }
 
   /* Assigning specific widths */
@@ -53,21 +66,64 @@ body {
   margin: 0;
   font-size: 0.9rem;
 }
-} 
+}
+ .flicker-box {
+ padding-left: 4rem;
+ padding-right: 4rem;
+  text-align: center;
+ // text-transform: uppercase;
+  font-family:"Consolas", "Roboto Mono", monospace;   
+  font-size: 1.3rem;
+  font-weight: bold;
+ text-shadow: 
+    -1px -1px 6px #fff,
+    1px 1px 6px #fff,
+    0 0 40px #ff003c,   /* Primary Red */
+    0 0 80px #ff003c,
+    0 0 120px #a200ff,  /* Transition to Purple */
+    0 0 160px #a200ff,
+    0 0 200px #a200ff;
+//border: 2px solid #fff; /* Sharp red edge */
+//  border-radius: 2px;        /* Slightly rounded for a modern look */
+// box-shadow: 
+//    0 0 40px #a200ff,   /* Outer purple haze */
+//    inset 0 0 15px #a200ff; /* Subtle glow inside the box */
+//}
+.flicker-slow{
+  animation: flicker 11s linear infinite;
+}
+
+.flicker-fast{
+  animation: flicker 3s linear infinite;
+}
+
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+		//text-shadow: none;
+    opacity: .99;
+		
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.4;
+	}
+}
 </style>
-<body>
 </head>
+<body>
 <header class="site-header">
   <div class="header-text">
-    <h1>Welcome to jazzifyy's website</h1>
-    <p>“It was a wonderful night, such a night as is only possible when we are young, dear reader.”</p>
+    <h1>Welcome to <span style="color:#a232a8;">jazzifyy</span>'s website</h1>
+    <p><i> “It was a wonderful night, such a night as is only possible when we are young, dear reader.”</i></p>
   </div>
-  
 </header>
-<hr> 
+<hr>
+ 
+<div class = "flicker-box">
+<span class = "flicker-fast">Is any of it real? </span><span class = "flicker-slow">We live in branded houses trademarked by corporations built on bipolar numbers jumping up and down on <span class = "flicker-fast">digital displays</span>, <span class = "flicker-slow">hypnotizing us into the biggest slumber mankind has ever seen.</span>
+</div>
 <div class="container">
   <div class="column col-left">
-    <h3>Socials</h3>
+    <h3>Socials and Links</h3>
     <a href="https://www.instagram.com/jazzifyy_" target ="_blank">
     Instagram
     </a>
@@ -77,15 +133,18 @@ body {
     <a href="https://jazzifyy.atabook.org/" target = "_blank">guestbook</a>.
     </p>
     <img src = "guestbook.gif">
+    <br>
+    Check out my <a href="albums.html">album recommendations</a>.
   </div>
   <div class="column col-main">
-    <img src = "rain.gif" width = "650">
+
     <h2>Welcome to my corner of the internet</h2>
-    <p>I am some 20M guy who is interested in the intricacies that shape the natural world around us.</p> 
+
+    <img src = "rain.gif" width = "700">
+    <p>Hey there! I am a 20 year old guy in college. I am an atheist, and I value communal living and most importantly, simple living. If you know me in real life, please feel free to strike a conversation, despite my reclusive attitude (idk why I am like this).</p> 
     <p>If you think this website is ugly, chances are that you've grown too accustomed to the cages of the modern web. This is a space to think and to relax, a space where you are not in the constant stream of ads and manipulation. Break free, dear friend.</p>
-    <p> <i>"Is any of it real? ...We live in branded houses trademarked by corporations built on bipolar numbers jumping up and down on digital displays, hypnotizing us into the biggest slumber mankind has ever seen."</i>
-    </p>
-     <p style="text-align: center; font-family:Brush Script MT,cursive; font-size: 25px; width:600px">
+
+     <p style="text-align: center; font-family:Brush Script MT,cursive; font-size: 1.7rem">
      We'll give you a key to open all of the gates <br>
      We'll show you a sea of starlight to drown all your cares <br>
      Mirrorhouses, the sweetest kisses and wines <br>
@@ -100,17 +159,18 @@ body {
      <ul>
     <li>I constantly battle to keep the devils of self-doubt at bay. I lose most of the times. This website is my way of holding the line.</li>
     <li>I hate politicians/corporations that take part in the broader movement of social engineering.</li>
-    <li>I believe knowledge should be free and should be shared. The pursuit and teaching of knowledge is the one of the most noble doings of a human life.</li>
+    <li>I believe knowledge should be free and should be shared. The pursuit and teaching of knowledge is one of the most noble doings of a human life.</li>
     <li>It saddens me that the arts of collaborative learning are lost now. Everything is done to be better than the other. </li>
     </ul>
 
   </div>
   <div class="column col-right">
-    <h4>Currently listening to:</h4>
+    <h3>Currently listening to:</h3>
     <div id="lastfm-widget">
       <p>Loading track...</p>
     </div>
-    <h4>Currently reading:</h4>
+    (Check out my <a href="https://www.last.fm/user/jazzifyy" target="_blank">last.fm</a> profile.)
+    <h3>Currently reading:</h3>
     <ul>
     <li>Circe - Madeline Miller</li>
     <li>The Eye of the World - Robert Jordan</li>
