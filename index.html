@@ -16,12 +16,22 @@ html {
   }
 }
 body {
-  background-color: black;
-  color: white;
+  background-image: url("bg.webp");
+  background-attachment: fixed;
+  // background-color: black;
+  color: #9B92FF;
   font-size: 1.1rem;
-  font-family: 'Noto Serif', serif;
+  font-family: 'Noto Serif';
   line-height: 1.4;
 }
+h1, h2, h3 {
+  color: #88B4FF /* Your signature purple */
+}
+
+a {
+  color: #6F61FF
+}
+
  /* Basic styling for visibility */
 .column {
   padding:0;
@@ -43,7 +53,7 @@ body {
 @media (min-width: 1200px) {
   .container {
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 1.2rem;
   }
 
   /* Assigning specific widths */
@@ -55,8 +65,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 10px;
-  border-radius: 8px;
 }
 
 .lastfm-img {
@@ -68,7 +76,7 @@ body {
 .track-text p {
   text-align: left;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
 }
 }
 
@@ -78,17 +86,14 @@ body {
   text-align: center;
  // text-transform: uppercase;
   font-family:Dancing Script, Brush Script MT,cursive;   
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
- text-shadow: 
-    -1px -1px 6px #fff,
-    1px 1px 6px #fff,
-    0 0 40px #ff003c,   /* Primary Red */
-    0 0 80px #ff003c,
-    0 0 120px #a200ff,  /* Transition to Purple */
-    0 0 160px #a200ff,
-    0 0 200px #a200ff;
-//border: 2px solid #fff; /* Sharp red edge */
+  color: #E6E4FF;
+text-shadow: 
+  -1px -1px 4px #fff, 1px 1px 4px #fff,
+  0 0 40px #FF00FF, 0 0 80px #FF00FF,
+  0 0 160px #0000FF, 0 0 240px #0000FF, 0 0 320px #0000FF;
+     //border: 2px solid #fff; /* Sharp red edge */
 //  border-radius: 2px;        /* Slightly rounded for a modern look */
 // box-shadow: 
 //    0 0 40px #a200ff,   /* Outer purple haze */
@@ -117,7 +122,7 @@ body {
 <body>
 <header class="site-header">
   <div class="header-text">
-    <h1>Welcome to <span style="color:#a232a8;">jazzifyy</span>'s website</h1>
+    <h1>Welcome to <span style="color:green;">jazzifyy</span>'s website</h1>
     <p><i> “It was a wonderful night, such a night as is only possible when we are young, dear reader.”</i></p>
   </div>
 </header>
@@ -129,11 +134,16 @@ body {
 <div class="container">
   <div class="column col-left">
     <h3>Socials and Links</h3>
-    <a href="https://www.instagram.com/jazzifyy_" target ="_blank">
-    Instagram
+   <ul> 
+    <li><a href="https://www.instagram.com/jazzifyy_" target ="_blank">
+      Instagram
     </a>
+    <li><a href="https://www.last.fm/user/jazzifyy" target="_blank">
+      last.fm
+    </a>
+    </ul>
     <br>
-    <img src = "flower.gif" width = "250" height = "400">
+    <img src = "flower.gif" width = "250" height = "350">
     <p>Now since you are here, how about you sign my
     <a href="https://jazzifyy.atabook.org/" target = "_blank">guestbook</a>.
     </p>
@@ -160,7 +170,7 @@ body {
      The verse we leave with you will take you home <br>
     </p>
 
-    <p><b>Some facts about me:</b></p>
+    <h3>Some facts about me:</h3>
      <ul>
     <li>I constantly battle to keep the devils of self-doubt at bay. I lose most of the times. This website is my way of holding the line.</li>
     <li>I hate politicians/corporations that take part in the broader movement of social engineering.</li>
@@ -174,7 +184,6 @@ body {
     <div id="lastfm-widget">
       <p>Loading track...</p>
     </div>
-    (Check out my <a href="https://www.last.fm/user/jazzifyy" target="_blank">last.fm</a> profile.)
     <h3>Currently reading:</h3>
     <ul>
     <li>Circe - Madeline Miller</li>
