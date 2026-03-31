@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jazzifyy's logs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Noto Serif' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container-zen">
+    <a href="index.html" class="back-home"><code>cd ..</code></a>
+    
+    <header>
+        <h1><span style="color:white;">jazzifyy</span>'s logs</h1>
+        <p><i>Trying to disengage Nostromo's self-destruct sequence.</i></p>
+    </header>
+
+    <hr>
+     <article class="blog-entry">
+        <header class="entry-header">
+            <div class="entry-date">April 1, 2026</div>
+            <h3 class="entry-title">Watched 'The Invitation (2016)' a second time</h3>
+        </header>
+        <div class="blog-content">
+	  <p>I gotta say, the movie kept me at the edge of my seat on my second watch too. The atmosphere was so well done, building the tension up until its limits, and releasing it altogther in the end. Upon a bit more thought, I wonder how many religion/cults there was in history that led to such wide-scaled massacre of human life, just because the members of these groups were absolutely certain of their ideas to be true? Maybe this is why it is important to not be too confident of yourself, despite the more popular notion that opposes this idea. You can always be wrong.</p>
+
+	  <p>Signing off.</p>
+	</div>
+    </article>
+
+    <article class="blog-entry">
+        <header class="entry-header">
+            <div class="entry-date">March 31, 2026</div>
+            <h3 class="entry-title">Moved to PipeWire</h3>
+        </header>
+        <div class="blog-content">
+            <p>Finally nuked PulseAudio. I had some initial friction with the dependency tree (yes my system was not upgraded for months). Anyways, to install <code>pipewire-pulse</code> I had to do a full system upgrade but <code>rstudio-desktop</code> (from the <code>AUR</code>) was not allowing the upgrade because it was clinging on to some previous version of some packages, so had to uninstall it temporarily. 
+
+	      Its all good at the end, but probably because of one of my stupid hacks, my bluetooth speaker was sending audio to my laptop. Had to add 
+<pre>
+monitor.bluez.properties = {
+  bluez5.roles = [ a2dp_source hfp_hf hsp_hs ]
+}
+</pre>
+
+somewhere in <code>wireplumber</code> configuration.
+	    </p>
+	</div>
+    </article>
+
+    <footer style="text-align: center; padding-top: 5rem; opacity: 0.5;">
+        <p>End of the line. <a href="#">Scroll to top?</a></p>
+    </footer>
+</div>
+
+</body>
+</html>
