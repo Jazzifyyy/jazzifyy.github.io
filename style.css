@@ -52,6 +52,7 @@ a {
  .col-left { flex: 1; order: 1; }
   .col-main { flex: 3; order: 2; }
   .col-right { flex: 1; order: 3; }
+}
 
 .lastfm-track {
   display: flex;
