@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>envelope problem</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../style.css"> </head>
+<body>
+    <div class="container-zen">
+    <a href="../entries.html" class="back-home"><code>cd ..</code></a>
+
+        <header class="entry-header">
+            <span class="entry-date">April 2, 2026</span>
+            <h2 class="entry-title">A possible resolution of the Envelope Problem</h2>
+        </header>
+
+        <div class="blog-content">
+            <p>
+Here is a simple problem that I discovered recently:
+
+<br> <br>
+
+Imagine you are given two identical envelopes, each containing money. One contains twice as much as the other. You may pick one envelope and keep the money it contains. Having chosen an envelope at will, but before inspecting it, you are given the chance to switch envelopes. Should you switch?
+
+<br> <br>
+
+The situation seems to be completely symmetrical: Suppose the two envelopes contain amounts \(s\) and \(2s\). The expected amount when you randomly pick an envelope (or by switching the envelope) is \(\frac{3}{2}s\). (This assumes that the puzzle master sets the same amount of money in the envelopes everytime, but this might not be the case. We will see this later.)
+
+<br> <br>
+
+While the above argument may seem obvious, trivial even, consider the following argument: 
+
+<ul>
+<li> Suppose \(x\) is the amount in the player's selected envelope. 
+<li> The probability that the player has picked the smaller envelope is \(\frac{1}{2}\), and that they have picked the larger envelope is also \(\frac{1}{2}\). 
+<li> The other envelope may contain \(2x\) or \(\frac{x}{2}\). If \(x\) is the smaller amount, then the other envelope contains \(2x\). If \(x\) is the larger amount, then the other envelope contains \(\frac{x}{2}\). 
+<li> Thus, the other envelope contains \(2x\) with probability \(\frac{1}{2}\) and \(\frac{x}{2}\) with probability \(\frac{1}{2}\). So the expected earning by switching is
+$$\frac{1}{2}(2x)+ \frac{1}{2}\left( \frac{x}{2} \right)= \frac{5}{4}x.$$
+<li> Since \(\frac{5}{4}x > x\), the expected earning is slightly better than the amount the player would get if they didn't switch.
+<li> So the player should switch! 
+</ul>
+
+<br> 
+
+Interestingly, this is considered an open problem in probability theory and the following line from wikipedia is amusing:
+
+<br> <br>
+
+"No proposed solution is widely accepted as definitive. Despite this, it is common for authors to claim that the solution to the problem is easy, even elementary. Upon investigating these elementary solutions, however, they often differ from one author to the next."
+
+<br> <br>
+
+I believe that despite the probabilists waving this off as an ill-defined problem, there is a lot of insight to be gained if we can pin-point where the switching argument went wrong and that will be the goal of this entry.
+
+	      The paradox will be resolved if we can show that the switching argument leads to some kind of inconsistency. 
+
+<br> <br>
+
+Define the sample space of the experiment as: 
+$$\Omega  := (0, \infty) \times \{ \text{Small}, \text{Large} \}$$
+where the first component tells us the amount of money found in the smaller envelope and the second component tells us the envelope that the player picked. 
+
+Define the random variable \(S\) to be the first component of the sample space and suppose it has a distribution \(\rho(\cdot)\). Also define
+$$X= \begin{cases}
+S; \text{ if small envelope is chosen} \\
+2S; \text{ if big envelope is chosen}.
+\end{cases}$$
+and
+$$Y = \begin{cases}
+2S; \text{ if small envelope is chosen} \\
+S; \text{ if big envelope is chosen}.
+\end{cases}$$
+Note that \(X\) denotes the money that the player gets if they don't switch and \(Y\) denotes the money if they do switch.
+
+Given the fact that if we picked the smaller envelope, the money inside it is drawn from the distribution \(\rho(\cdot)\), i.e.,  
+$$
+\begin{align}
+f(X=x | \text{Small}) &= \frac{d}{dx}\mathbb{P}(X\leq x |\text{Small}) \\
+&= \frac{d}{dx} \frac{\mathbb{P}(X\leq x; \text{Small})}{\mathbb{P}(\text{Small})} \\
+&= \frac{d}{dx} \mathbb{P}(S\leq x) \\
+&= \rho(s).
+\end{align}
+$$
+and to find \(f(X=s | \text{Large})\), we start with 
+
+$$
+\begin{align}
+F_{X}(x | \text{Large}) &= \mathbb{P}(X \leq x | \text{Large}) \\
+&= \frac{\mathbb{P}(X \leq x ; \text{Large})}{\mathbb{P}(\text{Large})} \\
+&= \frac{\mathbb{P}(2S\leq x; \text{Large})}{\mathbb{P}(\text{Large})} \\
+&= \frac{\mathbb{P}(2S \leq x)\left( \frac{1}{2} \right)}{\left( \frac{1}{2} \right)} \\
+&= F_{S}\left( \frac{x}{2} \right). \\
+\end{align}
+$$
+Take the derivative to get \(f\):
+$$f(X=x | \text{Large}) = \frac{1}{2}\rho\left( \frac{x}{2} \right).$$
+Then 
+$$
+\begin{align}
+f(X=x) &= \lim_{ h \to 0 } \frac{\mathbb{P}(x< X\leq x+ h)}{h} \\
+&= \lim_{ h \to 0 } \frac{1}{h}\left[ \frac{\mathbb{P}(x< X\leq x+ h| \text{Large})}{2}  + \frac{\mathbb{P}(x < X \leq x + h| \text{Small})}{2}\right] \\
+&= \frac{1}{2}\lim_{ h \to 0 } \frac{1}{h}\left[ F_{S}\left(\frac{x+h}{2}\right)-F_{S}\left( \frac{x}{2} \right) + F_{S}(x+h) - F_{S}(x )\right] \\
+&= \frac{1}{2} \left\{  \lim_{ h \to 0 } \frac{1}{h}\left[ F_{S}\left(\frac{x+h}{2}\right) - F_{S}\left( \frac{x}{2} \right) \right] + \lim_{ h \to 0 } \frac{F_{S}(x+h)-F_{S}(x)}{h}\right\} \\
+&= \frac{1}{2}\left[ \frac{1}{2}\rho\left( \frac{x}{2} \right)+ \rho(x) \right].
+\end{align}
+$$
+Given that the player finds \(x\) money, what is the probability that they are on the small envelope? It is
+$$\begin{align}
+\mathbb{P}(\text{Small}| X=x) &= \frac{\mathbb{P}(\text{Small})f(X=x|\text{Small})}{f(X=x)} \\ 
+&= \frac{\frac{1}{2}\rho(x)}{\frac{1}{2}\left[ \frac{1}{2}\rho\left( \frac{x}{2} \right)+ \rho(x) \right]} \\
+&= \frac{\rho(x)}{\frac{1}{2}\rho\left( \frac{x}{2} \right) + \rho(x)}.
+\end{align}$$
+Similarly, given that the player finds \(x\) money, the probability that they are on the large envelope is 
+$$
+\begin{align}
+\mathbb{P}(\text{Large}|X=x) &= \frac{\mathbb{P}(\text{Large})f(X=x|\text{Large})}{f(X=x)} \\
+&= \frac{\frac{1}{2}\cdot\frac{1}{2}\rho\left( \frac{x}{2} \right)}{\frac{1}{2}\left[ \frac{1}{2}\rho\left( \frac{x}{2} \right)+ \rho(x) \right]} \\
+&= \frac{\frac{1}{2}\rho\left( \frac{x}{2} \right)}{\frac{1}{2}\rho\left( \frac{x}{2} \right)+ \rho(x)}.
+\end{align}
+$$
+The switching argument essentially says: "given I have \(x\) money in my first envelope, there is a 50% chance that I am on the small envelope and a 50% chance that I am on the large envelope.", i.e., the argument claims that
+$$\mathbb{P}(\text{Large}| X=x)=\mathbb{P}(\text{Small}|X=x).$$
+which implies that
+$$\rho(x)=\frac{1}{2}\rho\left( \frac{x}{2} \right)$$
+which may not necessarily hold!
+														
+Let's investigate intervals of the form \((2^n, 2^{n+1}]\): 
+
+$$\begin{align}
+\int_{2^n}^{2^{n+1}}\rho(x)dx &= \int_{2^{n-1}}^{2^{n}}\rho(2x)2dx \\
+&= \int_{2^{n-1}}^{2^n}\rho(x)dx \\
+&\vdots \\
+&= \int_{1}^2 \rho(x)dx =: m
+\end{align}$$
+If \(m>0\), the distribution puts equal mass on the disjoint intervals \(A_{n}=(2^n, 2^{n+1}]\) where \(n \in \mathbb{Z}\). This implies that
+$$\begin{align}
+\mathbb{P}\left( \bigcup_{n=0}^\infty \{ S \in A_{n} \} \right) &= \sum_{n=0}^\infty\mathbb{P}(S \in A_{n}) \\
+&= \sum_{n=0}^\infty m = \infty.
+\end{align}$$
+If \(m=0\), then \(\mathbb{P}(S \in (0, \infty))=0\).
+
+<br> <br>
+
+Thus, such a distribution cannot exist! The switcher claims, for instance, that the probability that the smaller envelope has an amount belonging in \((70 \text{ trillion}, 140 \text{ million})\) is just as likely as the amount belonging in \((1, 2)\). But there is only a finite amount of money in the world.
+
+<br> <br>
+
+<h3>The correct argument:</h3>
+
+How much do we earn on average if we don't switch? It is given by
+$$
+\begin{align}
+\mathbb{E}[X] &= \int_{0}^\infty x f(X=x)dx \\
+&= \frac{1}{2}\int_{0}^\infty x \rho(x)dx + \frac{1}{4}\int_{0}^\infty x\rho\left( \frac{x}{2} \right)dx \\
+&= \frac{1}{2}\mathbb{E}[S]+ \frac{1}{4}\int_{0}^\infty 2x\rho(x)2dx \\
+&= \frac{1}{2}\mathbb{E}[S]+ \mathbb{E}[S] \\
+&= \frac{3}{2}\mathbb{E}[S].
+\end{align}
+$$
+And how much do we earn on average if we do switch? We hope that it remains the same. We have 
+$$
+\begin{align}
+\mathbb{E}[Y] &= \mathbb{E}[\mathbb{E}[Y|X]] \\
+&= \int_{-\infty}^\infty \mathbb{E}[Y|X=x]f(X=x)dx \\
+&= \int_{0}^\infty \left( \frac{x}{2} \mathbb{P}\left[ Y=\frac{x}{2} \bigg| X=x\right] + 2x \mathbb{P}[Y = 2x | X=x]\right)f(X=x)dx \\
+&= \int_{0}^\infty \left( \frac{x}{2} \mathbb{P}[\text{Large}|X=x]+2x\mathbb{P}[\text{Small}| X=x] \right)f(X=x)dx \\
+&= \int_{0}^\infty \left( \frac{x}{2}\cdot\frac{\frac{1}{2}\rho\left( \frac{x}{2} \right)}{\frac{1}{2}\rho\left( \frac{x}{2} \right)+ \rho(x)} + 2x \cdot \frac{\rho(x)}{\frac{1}{2}\rho\left( \frac{x}{2} \right) + \rho(x)} \right)\frac{1}{2}\left[ \frac{1}{2}\rho\left( \frac{x}{2} \right)+ \rho(x) \right]dx \\
+&= \int_{0}^\infty \frac{1}{2}\left( \frac{x}{2}\cdot \frac{1}{2} \rho\left( \frac{x}{2} \right) + 2x \cdot \rho(x)\right)dx \\
+&= \frac{3}{2}\mathbb{E}[S]
+\end{align}
+$$
+as hoped.
+<br> <br>
+
+If the puzzle master does not change the amounts of money when the experiment is repeated, we have \(S=s\) and the expected values are \(\frac{3}{2}s\) as seen in the beginning.
+	    </p>
+        </div>
+   <footer style="text-align: center; padding-top: 5rem; opacity: 0.5;">
+        <p>End of the line. <a href="#">Scroll to top?</a></p>
+    </footer>
+
+    </div>
+</body>
+</html>
