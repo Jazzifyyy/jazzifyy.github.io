@@ -41,6 +41,9 @@ a {
 .col-left { order: 3; }
 .col-right { order: 2; }
 
+.desktop-only {
+  display: none;
+}
 
 /* 2. Tablet/Desktop: Side-by-side layout */
 @media (min-width: 1200px) {
@@ -48,7 +51,9 @@ a {
     flex-direction: row;
     gap: 1.2rem;
   }
-  
+  .desktop-only {
+      display: block;
+  }
  .col-left { flex: 1; order: 1; }
   .col-main { flex: 3; order: 2; }
   .col-right { flex: 1; order: 3; }
