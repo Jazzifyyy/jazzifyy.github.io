@@ -62,6 +62,7 @@ a {
 
 .lastfm-img {
   width: 75%;
+  max-width: 200px;
   border-radius: 4px;
   object-fit: cover;
 }
