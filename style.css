@@ -52,6 +52,8 @@ a {
     gap: 1.2rem;
   }
   .desktop-only {
+
+
       display: block;
   }
  .col-left { flex: 1; order: 1; }
@@ -117,7 +119,6 @@ text-shadow:
 }
 
 .container-zen {
-    max-width: 800px; 
     margin: 0 auto;  
     padding: 2rem 1rem;
 }
@@ -171,3 +172,47 @@ text-shadow:
     font-weight: 700;
     opacity: 0.9;
 }
+
+/* Layout for the vertical stream */
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Generous separation between logs */
+    margin-top: 30px;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column; /* Forces everything to stack cleanly vertical */
+    gap: 15px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #444; /* Subtle retro log divider */
+}
+
+.blog-content h2 {
+    margin: 0 0 10px 0;
+}
+
+.blog-content p {
+    margin: 0 0 12px 0;
+}
+
+.read-more {
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Enlarged Image Preview below text */
+.blog-thumbnail {
+    width: 100%;
+    max-width: 450px; /* Slightly enlarged width budget */
+    margin-top: 5px;
+}
+
+.blog-thumbnail img {
+    width: 100%;
+    height: auto;
+    max-height: 280px; /* Keeps landscape/panoramic shots crisp without overflowing */
+    object-fit: cover;
+}
+
