@@ -252,6 +252,6 @@ a:hover {
 @media only screen and (max-width: 600px) {
   html {
     /* Downscales absolutely ALL text and layout spacing globally on phones */
-    font-size: 13px !important; 
+    font-size: 12px !important; 
   }
 }

@@ -62,6 +62,7 @@ def generate_blog_index():
     html_content = """<!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
     <title>jazzifyy's logs</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Noto Serif' rel='stylesheet'>
