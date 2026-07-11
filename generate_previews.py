@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 
 # Configuration
 BLOG_FOLDER = "./logs"        # The folder containing your HTML blog posts
-OUTPUT_FILE = "index.html" # Change to whatever your main page filename is
-PREVIEW_LENGTH = 300            # Number of characters for the excerpt
+OUTPUT_FILE = "logs.html" # Change to whatever your main page filename is
+PREVIEW_LENGTH = 500            # Number of characters for the excerpt
 
 def generate_blog_index():
     blog_previews = []
@@ -13,7 +13,7 @@ def generate_blog_index():
         print(f"Error: The folder '{BLOG_FOLDER}' does not exist.")
         return
 
-    for filename in sorted(os.listdir(BLOG_FOLDER)):
+    for filename in sorted(os.listdir(BLOG_FOLDER), reverse = True):
         if filename.endswith(".html"):
             file_path = os.path.join(BLOG_FOLDER, filename)
             
@@ -77,6 +77,8 @@ def generate_blog_index():
         <p><i>Trying to disengage Nostromo's self-destruct sequence.</i></p>
     </header>
 
+    <img src = "lain.gif" style="width: 35%; height: auto;">
+    <p>The sole purpose of doing this is so that the reality doesn't feel like a quick blip. This will perhaps make me more grounded, a way to slow down and aid my poor memory, in this terrifyingly fast flow of time.</p> 
     <hr>
     
     <!-- Generated Blog List -->

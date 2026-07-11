@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Lora:ital,wght@0,400;0,700;1,400&family=Marck+Script&display=swap');
+
+:root {
+  --fg-color: #ffffff;
+  --bg-color: #000000;
+  --color00: #E1578A; /* Section lines & dividers */
+  --color01: #FF69EB; /* Vibrant neon link magenta */
+  --color02: #FF86C8; /* Muted hover pink */
+  --color03: #FFA3A5; /* Warm soft heading coral */
+  --color04: #FFBF81; /* Warm gold accent */
+  --color05: #FFDC5E; /* Read More bright yellow */
+  --color06: #FDFF8F; /* Cream accent */
+}
+
 html {
   font-size: 16px; 
 }
@@ -7,27 +21,54 @@ html {
     font-size: 16px;
   }
 }
+
+#header-quote {
+  font-family: 'Marck Script', 'Galada', cursive, serif;
+  font-size: 1.4rem;      
+  line-height: 1.6em;    
+  color: #cb99c9;     
+  max-width: 1000px;            
+  text-align: left;
+  margin: auto;
+}
+
+#header-quote span {
+  display: block;            
+  margin-left: 20%;          
+}
+
 body {
-  // background-image: url("bg.webp");
+  /* background-image: url("bg.webp"); */
   background-attachment: fixed;
-  background-color: black;
-  color: #d0ccfc;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
   font-size: 1.1rem;
-  font-family: 'Noto Serif';
-  line-height: 1.4;
-  font-weight: 500;
-}
-h1, h2, h3 {
-  color: #d694c5;
+  font-family: 'Lora', serif; 
+  line-height: 1.5;
+  font-weight: 400;
 }
 
+h1, h2, h3, .entry-title {
+  color: var(--color03);
+  font-family: 'Marck Script', serif; 
+}
+
+h1 { font-size: 2.9rem; }      
+h2, .entry-title { font-size: 1.9rem; } 
+h3 { font-size: 1.7rem; }      
 a {
-  color: #6F61FF;
+  color: var(--color01);
+  text-decoration: none;
 }
 
- /* Basic styling for visibility */
+a:hover {
+  color: var(--color02);
+  text-decoration: underline;
+}
+
+/* Basic styling for visibility */
 .column {
-  padding:0;
+  padding: 0;
 }
 
 /* 1. Mobile First: Columns stack vertically by default */
@@ -52,11 +93,9 @@ a {
     gap: 1.2rem;
   }
   .desktop-only {
-
-
-      display: block;
+    display: block;
   }
- .col-left { flex: 1; order: 1; }
+  .col-left { flex: 1; order: 1; }
   .col-main { flex: 3; order: 2; }
   .col-right { flex: 1; order: 3; }
 }
@@ -80,139 +119,132 @@ a {
   font-size: 1.15rem;
 }
 
- .flicker-box {
- padding-left: 4rem;
- padding-right: 4rem;
+.flicker-box {
+  padding-left: 4rem;
+  padding-right: 4rem;
   text-align: center;
- // text-transform: uppercase;
-  font-family:Dancing Script, Brush Script MT,cursive;   
+  font-family: 'Marck Script', cursive;   
   font-size: 1.7rem;
   font-weight: bold;
   color: #E6E4FF;
-text-shadow: 
-  -1px -1px 4px #fff, 1px 1px 4px #fff,
-  0 0 40px #FF00FF, 0 0 80px #FF00FF,
-  0 0 160px #0000FF, 0 0 240px #0000FF, 0 0 320px #0000FF;
-     //border: 2px solid #fff; 
-//  border-radius: 2px;        
-// box-shadow: 
-//    0 0 40px #a200ff,  
-//    inset 0 0 15px #a200ff;
-//}
-.flicker-slow{
+  text-shadow: 
+    -1px -1px 4px #fff, 1px 1px 4px #fff,
+    0 0 40px #FF00FF, 0 0 80px #FF00FF,
+    0 0 160px #0000FF, 0 0 240px #0000FF, 0 0 320px #0000FF;
+}
+
+.flicker-slow {
   animation: flicker 20s linear infinite;
 }
 
-.flicker-fast{
+.flicker-fast {
   animation: flicker 2s linear infinite;
 }
 
 @keyframes flicker {
-	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-		//text-shadow: none;
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
     opacity: .99;
-		
-	}
-	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-		opacity: 0.4;
-	}
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+  }
 }
 
 .container-zen {
-    margin: 0 auto;  
-    padding: 2rem 1rem;
+  margin: 0 auto;  
+  padding: 2rem 1rem;
 }
 
 .blog-entry {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .entry-header {
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #d694c533;
-    padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color00);
+  padding-bottom: 0.5rem;
 }
 
-.entry-date {
-    font-family: 'Dancing Script', cursive;
-    color: #6F61FF;
-    font-size: 1.1rem;
+.entry-date, .artist-name {
+  font-family: 'Marck Script', cursive; /* Smooth fluid signature look */
+  color: var(--color01);
+  font-size: 1.4rem;
 }
 
 .entry-title {
-    margin: 0.2rem 0;
-    font-size: 1.8rem;
+  margin: 0.2rem 0;
+  font-size: 1.8rem;
 }
+
 .top-nav {
-    display: flex;
-    justify-content: flex-end;
-    gap: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
 }
+
 .album-large-img {
-    width: 100%;
-    max-width: 500px;
-    display: block;
-    margin: 1.5rem 0;
-    border-radius: 4px;
-    border: 1px solid #222;
-    transition: transform 0.5s ease;
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+  border: 1px solid #222;
+  transition: transform 0.5s ease;
 }
 
 .album-large-img:hover {
-    transform: scale(1.02);
-    border-color: #6F61FF;
+  transform: scale(1.02);
+  border-color: var(--color01);
 }
+
 .artist-name {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.9rem;
-    color: #6F61FF; 
-    margin-top: 1rem;
-    display: block;
-    font-weight: 700;
-    opacity: 0.9;
+  font-size: 1.9rem;
+  margin-top: 1rem;
+  display: block;
+  font-weight: 700;
+  opacity: 0.9;
 }
 
 /* Layout for the vertical stream */
 .blog-list {
-    display: flex;
-    flex-direction: column;
-    gap: 50px; /* Generous separation between logs */
-    margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px; 
+  margin-top: 30px;
 }
 
 .blog-card {
-    display: flex;
-    flex-direction: column; /* Forces everything to stack cleanly vertical */
-    gap: 15px;
-    padding-bottom: 30px;
-    border-bottom: 1px dashed #444; /* Subtle retro log divider */
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--color00); /* Uses his clean divider line accent */
 }
 
 .blog-content h2 {
-    margin: 0 0 10px 0;
+  margin: 0 0 10px 0;
 }
 
 .blog-content p {
-    margin: 0 0 12px 0;
+  margin: 0 0 12px 0;
 }
 
 .read-more {
-    text-decoration: none;
-    font-size: 0.9rem;
+  color: var(--color05); /* BugsWriter's dedicated Continue Reading yellow */
+  font-size: 0.9rem;
 }
 
 /* Enlarged Image Preview below text */
 .blog-thumbnail {
-    width: 100%;
-    max-width: 450px; /* Slightly enlarged width budget */
-    margin-top: 5px;
+  width: 100%;
+  max-width: 450px; 
+  margin-top: 5px;
 }
 
 .blog-thumbnail img {
-    width: 100%;
-    height: auto;
-    max-height: 280px; /* Keeps landscape/panoramic shots crisp without overflowing */
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  max-height: 280px; 
+  object-fit: cover;
 }
-
