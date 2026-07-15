@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>13-07-2026</title>
+    <link rel="stylesheet" href="../style.css"> </head>
+<body>
+    <div class="container-zen">
+    <a href="../logs.html" class="back-home"><code>cd ..</code></a>
+
+    <article class="blog-entry">
+        <header class="entry-header">
+            <h3 class="entry-title">13-07-2026</h3>
+        </header>
+        <div class="blog-content">
+	<p>
+Didn't know that my small hometown had a small Buddha monastery. Went there in the evening with mom. This short little trip was genuinely nourishing to the soul. The monsatery itself was quiet and blissful. On our way back, we visited one of mom's friends' home.    
+
+<div style = "display: grid; grid-template-columns: repeat(1, minmax(0, 1000px)); justify-content: center; gap: 2px; margin: 2px 0;">
+
+<img src = "../buddha_1.heic" style = "width: 80%; object-fit: cover;">
+<img src = "../buddha_3.heic" style = "width: 80%; object-fit: cover;">
+<img src = "../buddha_4.heic" style = "width: 50%; object-fit: cover;">
+<img src = "../buddha_5.heic" style = "width: 50%; object-fit: cover;">
+</div>
+	</p>		
+	</div>
+
+    </article>
+</body>
+</html>
+
+

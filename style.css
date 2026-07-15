@@ -23,10 +23,11 @@ html {
 }
 
 #header-quote {
-  font-family: 'Marck Script', 'Galada', cursive, serif;
+  font-family: 'Marck Script', 'Galada', cursive, cursive;
   font-size: 1.35rem;      
   line-height: 1.6em;    
-  color: #cb99c9;     
+  /*color: #cb99c9;*/     
+  color: #ffffff;
   max-width: 1000px;            
   text-align: left;
   margin: auto;
@@ -50,7 +51,7 @@ body {
 
 h1, h2, h3, .entry-title {
   color: var(--color03);
-  font-family: 'Marck Script', serif; 
+  font-family: 'Marck Script', cursive; 
 }
 
 h1 { font-size: 2.5rem; }      
@@ -167,7 +168,7 @@ a:hover {
 }
 
 .entry-date, .artist-name {
-  font-family: 'Marck Script', cursive; /* Smooth fluid signature look */
+  font-family: 'Marck Script', cursive;
   color: var(--color01);
   font-size: 1.4rem;
 }
