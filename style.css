@@ -108,16 +108,16 @@ a:hover {
 }
 
 .lastfm-img {
-  width: 75%;
-  max-width: 200px;
-  border-radius: 4px;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 1px;
   object-fit: cover;
 }
 
 .track-text p {
   text-align: left;
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
 .flicker-box {
